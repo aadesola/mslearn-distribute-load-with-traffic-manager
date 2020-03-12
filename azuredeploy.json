@@ -251,7 +251,7 @@
             "location": "eastus",
             "properties": {
                 "hardwarePrSofile": {
-                    "vmSize": "Standard_B2ms"
+                    "vmSize": "Standard_B1ms"
                 },
                 "storageProfile": {
                     "imageReference": {
