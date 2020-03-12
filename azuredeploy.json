@@ -46,7 +46,7 @@
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('eastasiaNSGName')]",
             "apiVersion": "2018-08-01",
-            "location": "eastasia",
+            "location": "eastus",
             "properties": {
                 "securityRules": [
                     {
@@ -94,7 +94,7 @@
             "type": "Microsoft.Network/virtualNetworks",
             "name": "[variables('eastasiaVnetName')]",
             "apiVersion": "2018-08-01",
-            "location": "eastasia",
+            "location": "eastus",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
@@ -142,7 +142,7 @@
             },
             "name": "[variables('eastasiaVMNicPIPName')]",
             "apiVersion": "2018-08-01",
-            "location": "eastasia",
+            "location": "eastus",
             "properties": {
                 "publicIPAddressVersion": "IPv4",
                 "publicIPAllocationMethod": "Static",
@@ -174,7 +174,7 @@
             "type": "Microsoft.Network/networkInterfaces",
             "name": "[variables('eastasiaVMNicName')]",
             "apiVersion": "2018-08-01",
-            "location": "eastasia",
+            "location": "eastus",
             "scale": null,
             "properties": {
                 "ipConfigurations": [
@@ -248,10 +248,10 @@
             "type": "Microsoft.Compute/virtualMachines",
             "name": "[variables('eastasiaVMName')]",
             "apiVersion": "2018-06-01",
-            "location": "eastasia",
+            "location": "eastus",
             "properties": {
-                "hardwareProfile": {
-                    "vmSize": "Standard_DS1_v2"
+                "hardwarePrSofile": {
+                    "vmSize": "Standard_B2ms"
                 },
                 "storageProfile": {
                     "imageReference": {
@@ -266,7 +266,7 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "storageAccountType": "Premium_LRS"
+                            "storageAccountType": "Standard_LRS"
                         },
                         "diskSizeGB": 30
                     },
@@ -301,7 +301,7 @@
                     "type": "extensions",
                     "name": "apache-ext",
                     "apiVersion": "2018-10-01",
-                    "location": "eastasia",
+                    "location": "eastus",
                     "properties": {
                         "publisher": "Microsoft.Azure.Extensions",
                         "type": "CustomScript",
@@ -311,7 +311,7 @@
                             "skipDos2Unix": true
                         },
                         "protectedSettings": {
-                            "commandToExecute": "sh setup-nginx.sh eastasia",
+                            "commandToExecute": "sh setup-nginx.sh eastus",
                             "fileUris": [
                                 "[uri(variables('deploymentUrl'), 'setup-nginx.sh')]"
                             ]
@@ -333,7 +333,7 @@
             "location": "westus2",
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS1_v2"
+                    "vmSize": "Standard_B2ms"
                 },
                 "storageProfile": {
                     "imageReference": {
@@ -348,7 +348,7 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "storageAccountType": "Premium_LRS"
+                            "storageAccountType": "Standard_LRS"
                         },
                         "diskSizeGB": 30
                     },
